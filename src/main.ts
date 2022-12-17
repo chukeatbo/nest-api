@@ -6,6 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const port = process.env.PORT || 3000;
   const config = new DocumentBuilder()
+    .addBearerAuth()
     .setTitle('Nest api')
     .setDescription('Nest API description')
     .setVersion('1.0')
